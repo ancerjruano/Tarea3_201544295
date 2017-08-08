@@ -18,8 +18,8 @@ public class Tarea_3 {
      public void MenuPrincipal(){
           // Encabezado Menu Principal
         System.out.println("......................");
-        System.out.println(" Tarea 3 ");
-        System.out.println(" 201544295 ");
+        System.out.println("-------Tarea 3--------");
+        System.out.println("------201544295-------");
         System.out.println("......................");
         
         // Opciones Menu Principal
@@ -31,7 +31,7 @@ public class Tarea_3 {
       public void MenuUsuarios(){
           // Encabezado Menu Principal
         System.out.println("......................");
-        System.out.println(" Menú Usuarios");
+        System.out.println("----Menú Usuarios-----");
         System.out.println("......................");
         
         // Opciones Menu Principal
@@ -55,6 +55,7 @@ public class Tarea_3 {
                  MenuUsuarios();
                   break;
             case 2: 
+                Palabras();
                   break;
             case 3: 
                 System.out.println("Has Salido");
@@ -116,21 +117,25 @@ public class Tarea_3 {
         MenuUsuarios();
     }
       public void MostrarUsuarioPersonalizado(){
-          String nombre;
-          int n;
-          Scanner UsuarioP = new Scanner(System.in);
-                  System.out.println("Ingrese Usuario");
-                  nombre=UsuarioP.next();
-                  for(n=0;n<Nombres.length;n++){
-        if(nombre == Nombres[n]){
-           System.out.println("Usuario");
-           System.out.println(n);
-        }else{
-         System.out.println("Usuario");
-         System.out.println("ERROR!! No existe ningún usuario con esa coincidencia");
-         } 
-       }
-      }
+          String usuario;
+        // Lector de Palabra
+        Scanner ingreso = new Scanner(System.in);
+               System.out.println("Ingresa Usuario --->  ");
+                usuario = ingreso.next();
+                
+                for(String i:getNombres()){
+                    if(i.equals(usuario)){
+                     System.out.println("------Usuario-------");
+                     System.out.println(usuario);
+                    }else{
+                        if(i.equals(false))
+                        System.out.println("------Usuario-------");
+                        System.out.println("ERROR!! No existe ningún usuario con esa coincidencia");
+                             }break;   
+                 
+                }  MenuUsuarios();
+              }
+        
       /**
      * @return the Nombres
      */
@@ -139,7 +144,7 @@ public class Tarea_3 {
     }
 
     /**
-     * @param Nombres the Palabras to set
+     * @param Nombres the Nombres to set
      */
     public void setNombres(String[] Nombres) {
         this.Nombres = Nombres;
