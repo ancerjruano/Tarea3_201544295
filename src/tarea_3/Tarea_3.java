@@ -135,14 +135,35 @@ public class Tarea_3 {
                  
                 }  MenuUsuarios();
               }
-        
+               public void Palabras(){
+             Scanner pabra = new Scanner(System.in);
+             String Pala;
+             int inc = 0;
+             boolean bError = false;
+             System.out.println("Ingresa Palabra---->");
+                Pala = pabra.next();
+                int des = Pala.length()-1;
+             while ((inc<des) && (!bError)){
+ 
+	if (Pala.charAt(inc)==Pala.charAt(des)){
+                System.out.println("¡SI ES PALINDROMA!!!!!");
+		inc++;
+		des--;
+                
+	} else {
+		bError = true;
+                System.out.println("¡NO ES PALINDROMA!!!!!");
+	     }
+           }
+             MenuPrincipal();
+         }
       /**
      * @return the Nombres
      */
     public String[] getNombres() {
         return Nombres;
     }
-
+     
     /**
      * @param Nombres the Nombres to set
      */
