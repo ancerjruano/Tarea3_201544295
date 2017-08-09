@@ -83,6 +83,7 @@ public class Tarea_3 {
                  MostrarUsuarioPersonalizado();
                   break;
             case 4:
+                 MenuPrincipal();
                 break;
             case 5: 
                 System.out.println("Has Salido");
@@ -121,19 +122,20 @@ public class Tarea_3 {
         // Lector de Palabra
         Scanner ingreso = new Scanner(System.in);
                System.out.println("Ingresa Usuario --->  ");
-                usuario = ingreso.next();
-                
+                usuario = ingreso.nextLine();
+                boolean existe = false;
                 for(String i:getNombres()){
                     if(i.equals(usuario)){
                      System.out.println("------Usuario-------");
                      System.out.println(usuario);
-                    }else{
-                        if(i.equals(false))
-                        System.out.println("------Usuario-------");
-                        System.out.println("ERROR!! No existe ningún usuario con esa coincidencia");
-                             }break;   
-                 
-                }  MenuUsuarios();
+                     existe = true;
+                    }
+                }
+                if(existe==false){
+                    System.out.println("------Usuario-------");
+                    System.out.println("ERROR!! No existe ningún usuario con esa coincidencia");
+                }
+                MenuUsuarios();
               }
                public void Palabras(){
              Scanner pabra = new Scanner(System.in);
